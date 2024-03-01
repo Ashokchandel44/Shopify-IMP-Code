@@ -507,3 +507,240 @@ setInterval(()=>{
 fetchData(rand)
 },1500)
 <=================================================END ASYNC AWAIT FUNCTION==============================================================>
+
+<===================================== HOW TO SETUP WP-MAIL SMTP WITH GMAIL =================================================>
+
+USE THIS WEBSITE LINK :- https://wpforms.com/how-to-securely-send-wordpress-emails-using-gmail-smtp/
+
+<===================================== HOW TO SETUP WP-MAIL SMTP WITH GMAIL =================================================>
+
+<=================================== GET UNIQUE COLLECTIONS PRODUCT USING JS API ============================================>
+
+<div id="products-container"></div>
+<script>
+const myHeaders = new Headers();
+myHeaders.append("X-Shopify-Access-Token", "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");
+myHeaders.append("Content-Type", "application/json");
+
+const requestOptions = {
+  method: "GET",
+  headers: myHeaders,
+  redirect: "follow"
+};
+
+fetch("https://quickstart-9ac5f6a0.myshopify.com/admin/api/2024-01/collections/457494429995/products.json", requestOptions)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(result => {
+    const productsContainer = document.getElementById('products-container');
+    result.products.forEach(product => {
+      const productDiv = document.createElement('div');
+      productDiv.classList.add('product');
+      
+      productDiv.innerHTML = `
+            <h2>${product.title}</h2>
+            <p>${product.vendor}</p>
+            <img src="${product.image.src}" alt="${product.title}" height="300px" width="auto">     
+      `;
+      
+      productsContainer.appendChild(productDiv);
+    });
+  })
+  .catch(error => console.error('Error:', error));
+  </script>
+
+<=================================== GET UNIQUE COLLECTIONS PRODUCT USING JS API ============================================>
+
+<========================================= NEWSLETTER EMAIL POPUP SHOPIFY ===================================================>
+
+
+<style>
+.popup-letters {
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+}
+.popup-letters .popup-letters-inners {
+    width: 31%;
+    text-align: center;
+    background: #fff;
+    margin: auto;
+    padding-bottom: 21px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 21px;
+}
+.popup-letters .popup-letters-inners img {
+    width: 100%;
+}
+.popup-letters .popup-letters-inners h2 {
+    text-align: left;
+    margin: 0px;
+    padding: 5px 10px 11px;
+    color: #00CC9C;
+}
+.popup-letters .popup-letters-inners h3 {
+    margin: 0px;
+    text-align: left;
+    padding: 0px 10px 11px;
+}
+.popup-letters .popup-letters-inners form#ContactFooter {
+    max-width: 100%;
+    padding: 0px 13px 0px;
+}
+.popup-letters .popup-letters-inners form#ContactFooter input {
+    margin: 0px;
+    border: solid 2px #ddd;
+}
+.popup-letters .popup-letters-inners form#ContactFooter label {
+    color: #000;
+}
+.popup-letters .popup-letters-inners form#ContactFooter input {
+    margin: 0px;
+    border: solid 2px #ddd;
+}
+.popup-letters .popup-letters-inners form#ContactFooter .newsletter-form__field-wrapper button#Subscribe {
+    position: static;
+    background: #00CC9C;
+    width: 100%;
+    color: #fff;
+    padding: 13px;
+    font-size: 21px;
+    border-radius: 9px;
+    margin: 13px 0px;
+}
+    .popup-letters .popup-letters-inners p {
+    text-align: left;
+    margin: 0px;
+    padding: 0px 10px 0px;
+}
+  .popup-letters .popup-letters-inners .newsletter-form__field-wrapper .field {
+    display: inline-block;
+}
+    .popup-letters .popup-letters-inners .newsletter-form__field-wrapper {
+    max-width: 100%;
+}
+    span.closs-btns {
+    position: absolute;
+    right: -13px;
+    z-index: 999;
+    width: 38px;
+    height: 17px;
+    top: -13px;
+    cursor: pointer;
+}
+    @media only screen and (max-width: 767px){
+      .popup-letters .popup-letters-inners {
+    width: 91%;
+}
+      .popup-letters .popup-letters-inners form#ContactFooter {
+    text-align: left;
+    justify-content: left;
+    align-items: baseline;
+}
+    }
+  </style>
+  
+<script>
+$(document).ready(function(){
+  $(".closs-btns").click(function(){
+	localStorage.setItem('pop_submit', 'yes');
+    $(".popup-letters").css("display", "none");
+  });
+});
+</script>
+
+ {% if request.path == '/' %}
+ <div class="popup-letters">
+  <div class="popup-letters-inners">
+    <span class="closs-btns"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM8.96963 8.96965C9.26252 8.67676 9.73739 8.67676 10.0303 8.96965L12 10.9393L13.9696 8.96967C14.2625 8.67678 14.7374 8.67678 15.0303 8.96967C15.3232 9.26256 15.3232 9.73744 15.0303 10.0303L13.0606 12L15.0303 13.9696C15.3232 14.2625 15.3232 14.7374 15.0303 15.0303C14.7374 15.3232 14.2625 15.3232 13.9696 15.0303L12 13.0607L10.0303 15.0303C9.73742 15.3232 9.26254 15.3232 8.96965 15.0303C8.67676 14.7374 8.67676 14.2625 8.96965 13.9697L10.9393 12L8.96963 10.0303C8.67673 9.73742 8.67673 9.26254 8.96963 8.96965Z" fill="#FFFFFF"></path> </g></svg></span>
+    <img src="https://cdn.shopify.com/s/files/1/0859/7798/9428/files/bannerss-poup.png?v=1707995248">
+    <h2>You're awesome,</h2>
+    <h3>Be in the Know.</h3>
+    <p>sign up for new arrivals, offers and more!</p>
+            {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
+                <div class="rodiu_btn">
+                 <input type="radio" id="age1" name="contact[note][Gender]" value="Women">
+                    <label for="age1">Women</label>
+                    <input type="radio" id="age2" name="contact[note][Gender]" value="Men">
+                    <label for="age2">Men</label><br>
+                </div>
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <div class="newsletter-form__field-wrapper">
+                  <div class="field">
+                    <input
+                      id="NewsletterForm--{{ section.id }}"
+                      type="email"
+                      name="contact[email]"
+                      class="field__input"
+                      value="{{ form.email }}"
+                      aria-required="true"
+                      autocorrect="off"
+                      autocapitalize="off"
+                      autocomplete="email"
+                      {% if form.errors %}
+                        autofocus
+                        aria-invalid="true"
+                        aria-describedby="ContactFooter-error"
+                      {% elsif form.posted_successfully? %}
+                        aria-describedby="ContactFooter-success"
+                      {% endif %}
+                      placeholder="Enter Your Email"
+                      required
+                    >
+                    <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                      {{ 'newsletter.label' | t }}
+                    </label>
+                      <button
+                    type="submit"
+                    class="newsletter-form__button field__button"
+                    name="commit"
+                    id="Subscribe"
+                    aria-label="{{ 'newsletter.button_label' | t }}"
+                  >Sign up
+                    {% comment %}{% render 'icon-arrow' %} {% endcomment %}
+                  </button>
+                  </div>
+                  {%- if form.errors -%}
+                    <small class="newsletter-form__message form__message" id="ContactFooter-error">
+                      {%- render 'icon-error' -%}  <span class="exist">Email is alredy exist</span>
+                      {{- form.errors.translated_fields.email | capitalize }}
+                      {{ form.errors.messages.email -}}
+                    </small>
+                  {%- endif -%}
+                </div>
+              {%- endform -%}
+      </div>
+</div>
+{% endif %}
+
+<=================== ADD THIS SCRIPT FOR ONE TIME SHOW ===========>
+
+<script>
+ var  query_string = localStorage.getItem('pop_submit');
+ if(query_string == 'yes')
+ {
+   $('.popup-letters').hide();
+ }else{
+  
+	   setTimeout(function() {
+	$('.popup-letters').show();
+}, 9000); 
+   
+ }
+ $(document).ready(function(){
+	$('.shopify-challenge__button').click(function(){
+	 console.log('set local storage');
+	 localStorage.setItem('pop_submit', 'yes');
+   })
+ })
+  </script>
+
+<========================================= NEWSLETTER EMAIL POPUP SHOPIFY ===================================================>
