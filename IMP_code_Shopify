@@ -783,3 +783,24 @@ $('.product-image').slick({
 
 
 <========================================= SINGLE SLICK SLIDER SHOPIFY ===================================================>
+
+
+
+
+
+<=======================================ON Scroll  hide/show Navbar ========================================================>
+
+$(window).scroll(function() {
+     var width = $("body").width();
+     if(width > 991){
+  if ($(this).scrollTop() > 0) {
+    $('.header__inline-menu').hide();
+  } else {
+    $('.header__inline-menu').show();
+  }
+     }
+});
+
+<=======================================ON Scroll  hide/show Navbar ========================================================>
+
+
