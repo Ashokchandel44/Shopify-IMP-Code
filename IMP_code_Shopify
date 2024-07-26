@@ -803,4 +803,77 @@ $(window).scroll(function() {
 
 <=======================================ON Scroll  hide/show Navbar ========================================================>
 
+<========================================Image with slider like shopify product page (Slick slider)================================================>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slick Slider Example</title>
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+    <style>
+        .slider-for .slick-slide img {
+            width: 100%;
+            height: auto;
+        }
+        .slider-nav {
+            margin-top: 10px;
+        }
+        .slider-nav .slick-slide img {
+            width: 100px;
+            height: auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Image Slider -->
+    <div class="slider-for">
+        <div><img src="https://via.placeholder.com/800x600?text=Image+1" alt="Image 1"></div>
+        <div><img src="https://via.placeholder.com/800x600?text=Image+2" alt="Image 2"></div>
+        <div><img src="https://via.placeholder.com/800x600?text=Image+3" alt="Image 3"></div>
+        <div><img src="https://via.placeholder.com/800x600?text=Image+4" alt="Image 4"></div>
+        <div><img src="https://via.placeholder.com/800x600?text=Image+5" alt="Image 5"></div>
+    </div>
 
+    <!-- Thumbnail Navigation Slider -->
+    <div class="slider-nav">
+        <div><img src="https://via.placeholder.com/100x75?text=Image+1" alt="Thumbnail 1"></div>
+        <div><img src="https://via.placeholder.com/100x75?text=Image+2" alt="Thumbnail 2"></div>
+        <div><img src="https://via.placeholder.com/100x75?text=Image+3" alt="Thumbnail 3"></div>
+        <div><img src="https://via.placeholder.com/100x75?text=Image+4" alt="Thumbnail 4"></div>
+        <div><img src="https://via.placeholder.com/100x75?text=Image+5" alt="Thumbnail 5"></div>
+    </div>
+
+    <!-- jQuery (required by Slick) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Slider JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+
+    <!-- Initialization Script -->
+    <script>
+        $(document).ready(function(){
+            $('.slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: true,
+                asNavFor: '.slider-nav'
+            });
+
+            $('.slider-nav').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                asNavFor: '.slider-for',
+                dots: true,
+                centerMode: true,
+                focusOnSelect: true
+            });
+        });
+    </script>
+</body>
+</html>
+
+<====================================================>
